@@ -1,0 +1,30 @@
+//WAP with single inheritance in which a super class declares only 2 instance variables
+//and a concrete sub class determines area of rectangles
+import java.util.Scanner;
+abstract class A {
+	int length;
+	int breadth;
+	abstract public void area();
+}
+class B extends A{
+	public B(int length, int breadth){
+		this.length = length;
+		this.breadth = breadth;
+		System.out.println("Lenght :- "+this.length);
+		System.out.println("Breadth :- "+this.breadth);
+	}
+	public void area() {
+		int a = length*breadth;
+		System.out.println("The area of the rectangle is :- "+a);
+	}
+}
+public class Book{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter the lenght and breadth of the rectangle :- ");
+		int l = input.nextInt();
+		int b = input.nextInt();
+		B obj = new B(l,b);
+		obj.area();
+	}
+}
