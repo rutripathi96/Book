@@ -1,0 +1,44 @@
+//wap in which an anstract class declares an instance variable and an abstract method Area
+//2 subclasses are declared which define area of square and area of circle.
+//Run the program and determine the areas with dimension 100
+import java.util.Scanner;
+abstract class A{
+	int side;
+	int radius;
+	final double pi = 3.14;
+	abstract public void area();
+}
+class Squar extends A{
+	public Squar(int side) {
+		this.side = side;
+		System.out.println("Side of square :- "+this.side);
+	}
+	public void area() {
+		double a = side*side;
+		System.out.println("The area of the sqaure is :- "+a);
+	}
+}
+class Circl extends A{
+	public Circl(int radius) {
+		this.radius = radius;
+		System.out.println("The radius of the circle is :- "+this.radius);
+	}
+	public void area() {
+		double b = (pi)*(radius*radius);
+		System.out.println("The area of the circle is :- "+b);
+	}
+}
+public class Book{
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		A obj;
+		System.out.println("Enter the side lenght of sqaure :- ");
+		int s = input.nextInt();
+		obj = new Squar(s);
+		obj.area();
+		System.out.println("Enter the radius of circle :- ");
+		int r = input.nextInt();
+		obj = new Circl(r);
+		obj.area();
+	}
+}
